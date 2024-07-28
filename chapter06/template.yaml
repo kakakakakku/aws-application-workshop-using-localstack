@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  Queue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: chapter06-queue
+      ReceiveMessageWaitTimeSeconds: 20
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: chapter06-function
+      CodeUri: ./src
+      Handler: app.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          ENV: local
+      Events:
+        SqsEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt Queue.Arn
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: chapter06-bucket
