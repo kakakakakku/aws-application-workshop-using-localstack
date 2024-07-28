@@ -1,0 +1,3 @@
+localstack-cli-*.tar.gz
+venv/
+__pycache__/
