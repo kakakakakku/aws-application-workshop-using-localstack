@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  SenderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: chapter07-sender-function
+      CodeUri: ./src
+      Handler: sender.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          ENV: local
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Method: POST
+            Path: /
+  Queue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: chapter07-queue
+      ReceiveMessageWaitTimeSeconds: 20
+  ReceiverFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: chapter07-receiver-function
+      CodeUri: ./src
+      Handler: receiver.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          ENV: local
+      Events:
+        SqsEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt Queue.Arn
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: chapter07-bucket
+
+Outputs:
+  ApiId:
+    Value: !Ref ServerlessRestApi
