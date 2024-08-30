@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directories:
+      - chapter03/src
+      - chapter05/src
+      - chapter06/src
+      - chapter06/tests
+      - chapter07/src
+      - chapter07/tests
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 1
+    target-branch: main
+    groups:
+      boto3-dependencies:
+        patterns:
+          - boto3
+      pytest-dependencies:
+        patterns:
+          - localstack-utils
+          - pytest
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
