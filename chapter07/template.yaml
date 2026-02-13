@@ -8,7 +8,7 @@ Resources:
       FunctionName: chapter07-sender-function
       CodeUri: ./src
       Handler: sender.lambda_handler
-      Runtime: python3.12
+      Runtime: python3.13
       Architectures:
         - x86_64
       Environment:
@@ -31,7 +31,7 @@ Resources:
       FunctionName: chapter07-receiver-function
       CodeUri: ./src
       Handler: receiver.lambda_handler
-      Runtime: python3.12
+      Runtime: python3.13
       Architectures:
         - x86_64
       Environment:
