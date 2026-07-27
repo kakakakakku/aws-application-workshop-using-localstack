@@ -1,6 +1,9 @@
 {
     "name": "aws-application-workshop-using-localstack",
     "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
+    "containerEnv": {
+        "IMAGE_NAME": "localstack/localstack:4.14.0"
+    },
     "features": {
         "ghcr.io/devcontainers/features/aws-cli:1": {},
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
