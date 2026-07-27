@@ -8,7 +8,10 @@ from localstack_utils.localstack import startup_localstack, stop_localstack
 
 @pytest.fixture(scope='module', autouse=True)
 def _setup():
-    startup_localstack(gateway_listen='0.0.0.0:14566')
+    startup_localstack(
+        image_name='localstack/localstack:4.14.0',
+        gateway_listen='0.0.0.0:14566',
+    )
 
     s3.create_bucket(
         Bucket='chapter06-bucket',

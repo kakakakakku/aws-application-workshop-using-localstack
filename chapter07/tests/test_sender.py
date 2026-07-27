@@ -8,7 +8,10 @@ from sender import main, sqs
 
 @pytest.fixture(scope='module', autouse=True)
 def _setup():
-    startup_localstack(gateway_listen='0.0.0.0:14566')
+    startup_localstack(
+        image_name='localstack/localstack:4.14.0',
+        gateway_listen='0.0.0.0:14566',
+    )
 
     sqs.create_queue(
         QueueName='chapter07-queue',

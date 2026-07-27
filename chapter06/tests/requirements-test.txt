@@ -1,2 +1,2 @@
-localstack-utils==1.0.1
+localstack-utils==1.0.5
 pytest==9.0.3
