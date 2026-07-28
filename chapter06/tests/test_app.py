@@ -15,7 +15,6 @@ def _setup():
 
     s3.create_bucket(
         Bucket='chapter06-bucket',
-        CreateBucketConfiguration={'LocationConstraint': 'ap-northeast-1'},
     )
 
     yield

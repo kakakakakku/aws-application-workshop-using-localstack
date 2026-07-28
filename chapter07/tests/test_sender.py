@@ -35,7 +35,7 @@ def test_main():
     main(event)
 
     response = sqs.receive_message(
-        QueueUrl='http://sqs.ap-northeast-1.localhost.localstack.cloud:14566/000000000000/chapter07-queue',
+        QueueUrl='http://sqs.us-east-1.localhost.localstack.cloud:14566/000000000000/chapter07-queue',
         MaxNumberOfMessages=10,
     )
 

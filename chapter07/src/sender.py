@@ -13,7 +13,7 @@ elif os.environ['ENV'] == 'test':
 def main(event):
     number = random.randint(0, 9999)
     sqs.send_message(
-        QueueUrl='http://sqs.ap-northeast-1.localhost.localstack.cloud:4566/000000000000/chapter07-queue',
+        QueueUrl='http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/chapter07-queue',
         MessageBody=json.dumps(
             {
                 'id': f'id{number:04}',

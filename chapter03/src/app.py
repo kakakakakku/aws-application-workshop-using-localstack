@@ -4,7 +4,7 @@ import boto3
 
 sqs = boto3.client('sqs', endpoint_url='http://localhost:4566')
 
-queue_url = 'http://sqs.ap-northeast-1.localhost.localstack.cloud:4566/000000000000/chapter03-queue'
+queue_url = 'http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/chapter03-queue'
 
 response = sqs.receive_message(
     QueueUrl=queue_url,
