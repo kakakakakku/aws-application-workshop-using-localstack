@@ -41,6 +41,14 @@ This workshop covers the following AWS services (in no particular order):
 6. [Run Unit Tests with a Disposable LocalStack](docs/06-test.md)
 7. [Deploy an API with Amazon API Gateway](docs/07-api.md)
 
+## LocalStack Workshop Series
+
+Check out the other workshops in the series!
+
+| [![Serverless Patterns on AWS](https://raw.githubusercontent.com/kakakakakku/aws-serverless-pattern-workshop-using-localstack/main/images/cover-en.png)](https://github.com/kakakakakku/aws-serverless-pattern-workshop-using-localstack) | [![Terraform on AWS](https://raw.githubusercontent.com/kakakakakku/aws-terraform-workshop-using-localstack/main/images/cover-en.png)](https://github.com/kakakakakku/aws-terraform-workshop-using-localstack) | [![Pulumi on AWS](https://raw.githubusercontent.com/kakakakakku/aws-pulumi-workshop-using-localstack/main/images/cover-en.png)](https://github.com/kakakakakku/aws-pulumi-workshop-using-localstack) |
+|:---:|:---:|:---:|
+| [Serverless Patterns on AWS](https://github.com/kakakakakku/aws-serverless-pattern-workshop-using-localstack) | [Terraform on AWS](https://github.com/kakakakakku/aws-terraform-workshop-using-localstack) | [Pulumi on AWS](https://github.com/kakakakakku/aws-pulumi-workshop-using-localstack) |
+
 ## Sponsors
 
 If you find this workshop useful, consider supporting my work — it keeps the workshops maintained and motivates new ones 😃
